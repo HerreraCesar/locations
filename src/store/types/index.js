@@ -1,1 +1,1 @@
-export {default as PLACES} from './places.types'
+export {default as PLACES} from './places.types';

@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.secondary
     },
     details: {
-        marginLeft: 15,
+        marginLeft: 20,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-start',
@@ -26,10 +26,22 @@ export const styles = StyleSheet.create({
     name: {
         color: COLORS.primary,
         fontSize: 18,
-        marginBottom: 10,
+        fontWeight: 'bold'
     },
     address: {
         color: COLORS.text,
         fontSize: 14,
+        marginVertical: 5,
+    },
+    coordinates: {
+        flex:1,
+        flexDirection: 'row',
+    },
+    latitude: {
+        color: COLORS.secondary,
+        marginRight: 10,
+    },
+    longitude: {
+        color: COLORS.secondary,
     }
 })

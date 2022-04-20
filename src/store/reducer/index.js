@@ -1,1 +1,1 @@
-export {default as placeReducer} from './places.reducer'
+export {default as placeReducer} from './places.reducer';

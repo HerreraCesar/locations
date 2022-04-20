@@ -1,1 +1,1 @@
-export {default as placeActions} from './places.action'
+export {default as placeActions} from './places.action';

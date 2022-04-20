@@ -20,3 +20,45 @@ export const init = () => {
 
   return promise;
 };
+
+export const insertPlace = (name, image, address, latitude, longitude) => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction(tx => {
+      tx.executeSql(
+        'INSERT INTO places (name, image, address, latitude, longitude) VALUES (?, ?, ?, ?, ?)',
+        [name, image, address, latitude, longitude],
+        (_, result) => {
+          resolve(result);
+        },
+        (_, error) => {
+          reject(error);
+        },
+      );
+    });
+  });
+  return promise;
+};
+
+export const fetchPlaces = () => {
+  const promise = new Promise((resolve, reject) => {
+    db.transaction(tx => {
+      tx.executeSql(
+        'SELECT * FROM places',
+        [],
+        (_, result) => {
+          let data = [];
+          let length = result.rows.length;
+          for (let i = 0; i < length; i++) {
+            let row = result.rows.item(i);
+            data.push(row);
+          }
+          resolve(data);
+        },
+        (_, error) => {
+          reject(error);
+        },
+      );
+    });
+  });
+  return promise;
+};
